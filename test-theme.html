@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Temas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .theme-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        .access-btn {
+            background: #3b82f6;
+            color: white;
+        }
+        #status {
+            padding: 10px;
+            margin: 10px 0;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste de Temas e Acessibilidade</h1>
+    
+    <div id="status">Carregando...</div>
+    
+    <div class="test-section">
+        <h2>🎨 Temas</h2>
+        <button class="theme-btn" onclick="testTheme('purple')">Roxo</button>
+        <button class="theme-btn" onclick="testTheme('blue')">Azul</button>
+        <button class="theme-btn" onclick="testTheme('green')">Verde</button>
+        <button class="theme-btn" onclick="testTheme('dark')">Preto</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>♿ Acessibilidade</h2>
+        <button class="access-btn" onclick="testAccessibility('none')">Normal</button>
+        <button class="access-btn" onclick="testAccessibility('high-contrast')">Alto Contraste</button>
+        <button class="access-btn" onclick="testAccessibility('large-text')">Texto Grande</button>
+        <button class="access-btn" onclick="testAccessibility('dyslexia')">Dislexia</button>
+        <button class="access-btn" onclick="testAccessibility('colorblind')">Daltônico</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Informações</h2>
+        <div id="info"></div>
+    </div>
+    
+    <script src="js/theme-manager.js"></script>
+    <script>
+        function updateStatus() {
+            const status = document.getElementById('status');
+            const info = document.getElementById('info');
+            
+            if (window.themeManager) {
+                status.innerHTML = '✅ Theme Manager carregado!';
+                status.style.background = '#d4edda';
+                
+                info.innerHTML = `
+                    <p><strong>Tema atual:</strong> ${window.themeManager.currentTheme}</p>
+                    <p><strong>Acessibilidade:</strong> ${window.themeManager.accessibilityMode}</p>
+                    <p><strong>Classes do body:</strong> ${document.body.className}</p>
+                `;
+            } else {
+                status.innerHTML = '❌ Theme Manager NÃO carregado!';
+                status.style.background = '#f8d7da';
+            }
+        }
+        
+        function testTheme(theme) {
+            console.log('Testando tema:', theme);
+            if (window.themeManager) {
+                window.themeManager.setTheme(theme);
+                updateStatus();
+            } else {
+                alert('Theme Manager não carregado!');
+            }
+        }
+        
+        function testAccessibility(mode) {
+            console.log('Testando acessibilidade:', mode);
+            if (window.themeManager) {
+                window.themeManager.setAccessibility(mode);
+                updateStatus();
+            } else {
+                alert('Theme Manager não carregado!');
+            }
+        }
+        
+        // Atualizar status a cada segundo
+        setInterval(updateStatus, 1000);
+        
+        // Atualizar imediatamente
+        setTimeout(updateStatus, 100);
+    </script>
+</body>
+</html>
