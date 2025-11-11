@@ -1,0 +1,428 @@
+/* Boletim Styles */
+
+.boletim-content {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Student Info Card */
+.student-info-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.student-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.student-avatar svg {
+    width: 40px;
+    height: 40px;
+}
+
+.student-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.student-details p {
+    margin: 0.25rem 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.period-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.period-selector label {
+    font-weight: 500;
+    color: #374151;
+}
+
+.period-selector select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+/* Performance Overview */
+.performance-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.performance-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.performance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.performance-header h4 {
+    margin: 0;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.performance-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.performance-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.performance-status.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.performance-status.warning {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.performance-status.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Charts Section */
+.charts-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+}
+
+.chart-card h4 {
+    margin: 0 0 1.5rem 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.chart-card canvas {
+    max-height: 300px;
+}
+
+/* Grades Table */
+.grades-table-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+}
+
+.grades-table-card h4 {
+    margin: 0 0 1.5rem 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.grades-table th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.grades-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #64748b;
+}
+
+.grades-table tr:hover {
+    background: #f8fafc;
+}
+
+.grade-value {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 50px;
+    display: inline-block;
+}
+
+.grade-value.excellent {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.grade-value.good {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.grade-value.average {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.grade-value.poor {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.attendance-percentage {
+    font-weight: 600;
+}
+
+.attendance-percentage.good {
+    color: #059669;
+}
+
+.attendance-percentage.warning {
+    color: #d97706;
+}
+
+.attendance-percentage.danger {
+    color: #dc2626;
+}
+
+.subject-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.subject-status.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.subject-status.recovery {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.subject-status.failed {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Attendance Details */
+.attendance-details-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+}
+
+.attendance-details-card h4 {
+    margin: 0 0 1.5rem 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.attendance-item {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.attendance-item h5 {
+    margin: 0 0 0.5rem 0;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.attendance-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.attendance-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .header-actions,
+    .btn {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+    }
+    
+    .boletim-content {
+        padding: 1rem;
+    }
+    
+    .chart-card canvas {
+        max-height: 200px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .boletim-content {
+        padding: 1rem;
+    }
+    
+    .student-info-card {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .student-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .performance-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .attendance-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grades-table {
+        font-size: 0.8rem;
+    }
+    
+    .grades-table th,
+    .grades-table td {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .attendance-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .period-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #64748b;
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f1f5f9;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

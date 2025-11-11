@@ -1,0 +1,683 @@
+/* Cadastro Specific Styles */
+
+.cadastro-card {
+    max-width: 600px;
+    width: 100%;
+    margin: 1rem auto;
+    min-height: auto;
+    max-height: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    margin: 0;
+}
+
+/* Select styling */
+select.form-input {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239ca3af" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select.form-input:focus {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%234f46e5" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>');
+}
+
+/* Password Requirements */
+.password-requirements {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+.requirements-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.requirements-list li {
+    font-size: 0.8rem;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.requirements-list li::before {
+    content: '✗';
+    color: #ef4444;
+    font-weight: bold;
+    width: 12px;
+    text-align: center;
+}
+
+.requirements-list li.valid {
+    color: #059669;
+}
+
+.requirements-list li.valid::before {
+    content: '✓';
+    color: #059669;
+}
+
+/* Form Footer */
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.form-footer p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.login-link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+/* Terms and Privacy Links */
+.checkbox-container a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-container a:hover {
+    text-decoration: underline;
+}
+
+/* Input Masks and Validation */
+.form-input.invalid {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input.valid {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.field-error {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.field-error svg {
+    width: 12px;
+    height: 12px;
+}
+
+.field-success {
+    color: #10b981;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.field-success svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Loading State */
+.cadastro-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success Animation */
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-checkmark {
+    animation: checkmark 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-body {
+        padding: 1rem 0;
+        align-items: flex-start;
+    }
+    
+    .login-container {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+    
+    .cadastro-card {
+        max-width: 100%;
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-row .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .requirements-list {
+        font-size: 0.75rem;
+    }
+    
+    .form-input {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .cadastro-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+    
+    .logo-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-input {
+        padding: 0.75rem 0.875rem 0.75rem 2.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .input-icon {
+        left: 0.75rem;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Custom Scrollbar for Requirements */
+.requirements-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.requirements-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.requirements-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.requirements-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Focus States */
+.form-input:focus + .field-error,
+.form-input:focus + .field-success {
+    opacity: 0.7;
+}
+
+/* Checkbox specific styles for terms */
+.checkbox-container {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Animation for form validation */
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}/
+* Fix for input interaction issues */
+.form-input {
+    cursor: text !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    pointer-events: auto !important;
+    background-color: white !important;
+    border: 2px solid #e5e7eb !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.form-input:hover {
+    border-color: #cbd5e1 !important;
+}
+
+.form-input:focus {
+    border-color: #4f46e5 !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+    outline: none !important;
+}
+
+/* Ensure containers don't block interaction */
+.input-container {
+    position: relative;
+    pointer-events: auto;
+    z-index: 50;
+}
+
+.input-container * {
+    pointer-events: auto;
+}
+
+.input-icon {
+    pointer-events: none !important;
+    z-index: 10;
+}
+
+/* Fix for select dropdown */
+select.form-input {
+    cursor: pointer !important;
+    background-color: white !important;
+    -webkit-appearance: menulist !important;
+    -moz-appearance: menulist !important;
+    appearance: menulist !important;
+}
+
+/* Ensure scroll works properly */
+body.login-body {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
+
+.login-container {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.cadastro-card {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+/* Fix backdrop filter issues */
+.login-card {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Ensure form elements are accessible */
+.login-form {
+    position: relative;
+    z-index: 10;
+}
+
+.form-group {
+    position: relative;
+    z-index: 10;
+}
+
+/* Fix password toggle button */
+.password-toggle {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 200 !important;
+    pointer-events: auto !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}/* 
+Text alignment fixes */
+.form-input {
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+    text-align: left !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 48px !important;
+    padding-top: 0.875rem !important;
+    padding-bottom: 0.875rem !important;
+}
+
+.form-input::placeholder {
+    color: #9ca3af !important;
+    opacity: 1 !important;
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+    text-align: left !important;
+}
+
+/* Fix for select alignment */
+select.form-input {
+    line-height: 1.4 !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+select.form-input option {
+    line-height: 1.4;
+    padding: 0.5rem;
+}
+
+/* Input container alignment */
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Icon alignment */
+.input-icon {
+    position: absolute !important;
+    left: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+/* Password toggle alignment */
+.password-toggle {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 200 !important;
+    pointer-events: auto !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* Ensure text is properly aligned in all browsers */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    font-family: inherit !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
+/* Fix for webkit browsers */
+input::-webkit-input-placeholder {
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}
+
+input::-moz-placeholder {
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}
+
+input:-ms-input-placeholder {
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}
+
+input:-moz-placeholder {
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}/* For
+ce proper text alignment */
+input.form-input,
+select.form-input {
+    text-align: left !important;
+    padding-left: 3rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    vertical-align: baseline !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Specific placeholder alignment */
+input.form-input::placeholder {
+    text-align: left !important;
+    padding-left: 0 !important;
+    line-height: 48px !important;
+    vertical-align: baseline !important;
+}
+
+/* Override any centering styles */
+.input-container input,
+.input-container select {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+/* Fix for select dropdown text */
+select.form-input {
+    text-align: left !important;
+    text-align-last: left !important;
+    direction: ltr !important;
+}
+
+/* Remove any flex centering */
+.form-input {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+    text-align: left !important;
+}
+
+/* Ensure icons don't interfere with text alignment */
+.input-icon {
+    left: 1rem !important;
+    position: absolute !important;
+    z-index: 5 !important;
+}
+
+/* Force left alignment for all input types */
+input[type="text"].form-input,
+input[type="email"].form-input,
+input[type="password"].form-input,
+input[type="tel"].form-input {
+    text-align: left !important;
+    direction: ltr !important;
+    unicode-bidi: embed !important;
+}
+
+/* Remove any inherited centering */
+.form-group .form-input {
+    text-align: left !important;
+    margin: 0 !important;
+    padding-left: 3rem !important;
+}
+
+/* Webkit specific fixes */
+input::-webkit-input-placeholder {
+    text-align: left !important;
+}
+
+input::-moz-placeholder {
+    text-align: left !important;
+}
+
+input:-ms-input-placeholder {
+    text-align: left !important;
+}
+
+/* Additional override for any framework styles */
+.cadastro-card .form-input,
+.login-card .form-input {
+    text-align: left !important;
+    padding-left: 3rem !important;
+}
+/* Aler
+t Styles */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 400px;
+    width: 100%;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.alert svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.alert.success {
+    background: rgba(16, 185, 129, 0.95);
+    color: white;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.alert.error {
+    background: rgba(239, 68, 68, 0.95);
+    color: white;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.alert.warning {
+    background: rgba(245, 158, 11, 0.95);
+    color: white;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.alert.info {
+    background: rgba(59, 130, 246, 0.95);
+    color: white;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Mobile alert styles */
+@media (max-width: 768px) {
+    .alert-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .alert {
+        padding: 0.875rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .alert svg {
+        width: 18px;
+        height: 18px;
+    }
+}/* Animação
+ para destacar botão */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+}
